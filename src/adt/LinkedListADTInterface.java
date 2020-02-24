@@ -11,4 +11,5 @@ public interface LinkedListADTInterface {
     void sort();
 
     void print();
+
 }
