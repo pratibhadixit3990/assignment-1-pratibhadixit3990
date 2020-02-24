@@ -9,6 +9,9 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     private int size = 0;
 
+    public LinkedListDefinitionClass() {
+    }
+
     @Override
     public void add(String fName, String lName, String[] cNumberArray, String eMAddress) {
     }
