@@ -65,7 +65,8 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     @Override
     public void search(String searchingContact) {
-
+        sort();
+        findNode(searchingContact);
     }
 
     public Link findNode(String searchingContact) {
