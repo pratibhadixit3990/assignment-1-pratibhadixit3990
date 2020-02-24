@@ -43,4 +43,6 @@ public class Link {
         }
     }
 
+    public void displayLinkDeletion() {
+    }
 }
