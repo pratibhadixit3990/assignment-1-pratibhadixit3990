@@ -12,4 +12,11 @@ public class Link {
 
     public Link next;
 
+    public Link(String fName, String lName, String[] cNumberArray, String eMAddress) {
+        this.fName = fName;
+        this.lName = lName;
+        this.cNumberArray = cNumberArray;
+        this.eMAddress = eMAddress;
+    }
+
 }
