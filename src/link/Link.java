@@ -44,5 +44,6 @@ public class Link {
     }
 
     public void displayLinkDeletion() {
+        System.out.println(iData + ". " + fName + " " + lName);
     }
 }
