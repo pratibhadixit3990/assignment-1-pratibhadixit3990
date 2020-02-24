@@ -20,6 +20,27 @@ public class Link {
     }
 
     public void displayLink() {
+        System.out.println("First Name: " + fName);
+        System.out.println("Last Name: " + lName);
+        int counterCNumberArray = 0;
+        while (cNumberArray[counterCNumberArray] != null) {
+            counterCNumberArray++;
+        }
+        String[] newCNumberArray = new String[counterCNumberArray];
+        for (int i = 0; i < newCNumberArray.length; i++) {
+            newCNumberArray[i] = cNumberArray[i];
+        }
+        if (counterCNumberArray == 1) {
+            System.out.println("Contact Number: " + newCNumberArray[0]);
+        } else {
+            String models = String.join(", ", newCNumberArray);
+            System.out.println("Contact Number(s): " + models);
+        }
+        if (eMAddress.equals("")) {
+            System.out.println("Email address: Not Entered");
+        } else {
+            System.out.println("Email address:" + eMAddress);
+        }
     }
 
 }
