@@ -28,4 +28,10 @@ public class Person {
         else return false;
     }
 
+    private static boolean isStringOnlyAlphabet(String str) {
+        return ((str != null)
+                && (!str.equals(""))
+                && (str.matches("^[a-zA-Z]*$")));
+    }
+
 }
