@@ -19,6 +19,21 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     @Override
     public void add(String fName, String lName, String[] cNumberArray, String eMAddress) {
+        sort();
+        size++;
+        Link newLink = new Link(fName, lName, cNumberArray, eMAddress);
+        if (first == null) {
+            first = new Link(fName, lName, cNumberArray, eMAddress);
+            return;
+        }
+        newLink.next = null;
+
+        Link last = first;
+        while (last.next != null) {
+            last = last.next;
+        }
+        last.next = newLink;
+        return;
     }
 
     @Override
