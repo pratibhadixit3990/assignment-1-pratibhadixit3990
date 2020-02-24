@@ -16,6 +16,11 @@ public class Person {
 
     String eMAddress = "";
 
+    private void unexpectedChoiceContactListApp() {
+
+    }
+
+
     private void exitingContactListApp() {
         System.out.println();
         System.out.println("Thanks for using the Contact List App. Visit Again!!");
