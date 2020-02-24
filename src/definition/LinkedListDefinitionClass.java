@@ -178,4 +178,32 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
             System.out.println("-------- * -------- * -------- * --------");
         }
     }
+
+    public Link delete(int key) {
+        Link current = first;
+        Link previous = first;
+        int id = 1;
+        System.out.println();
+        if (key > size) {
+            System.out.println("No Person with such index exist in the Contact List!");
+        }
+        while (current.iData != key) {
+            if (current.next == null) {
+                return null;
+            } else {
+                previous = current;
+                current = current.next;
+            }
+
+        }
+
+        if (current == first) {
+            first = first.next;
+        } else {
+            previous.next = current.next;
+        }
+        System.out.println(current.fName + " " + current.lName + " contact deleted from list!");
+        return current;
+    }
+
 }
