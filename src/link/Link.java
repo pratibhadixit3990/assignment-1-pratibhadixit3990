@@ -19,4 +19,7 @@ public class Link {
         this.eMAddress = eMAddress;
     }
 
+    public void displayLink() {
+    }
+
 }
