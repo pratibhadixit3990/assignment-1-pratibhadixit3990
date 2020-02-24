@@ -11,4 +11,6 @@ public class Person {
 
     String fName, lName;
 
+    String[] cNumberArray = new String[100];
+
 }
