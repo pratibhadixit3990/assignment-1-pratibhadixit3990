@@ -107,7 +107,8 @@ public class Person {
     }
 
     private void contactView() {
-
+        list.print();
+        enteringContactListApp();
     }
 
     private void contactAddition() {
