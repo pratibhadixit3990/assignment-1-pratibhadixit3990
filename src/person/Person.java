@@ -17,7 +17,44 @@ public class Person {
     String eMAddress = "";
 
     private void unexpectedChoiceContactListApp() {
-
+        Person call = new Person();
+        System.out.println();
+        int choiceCLA;
+        try {
+            System.out.println("Unexpected Choice ");
+            System.out.println("Do you want to enter the Contact List App again");
+            System.out.println("Press 1 for again entering the Contact List App and 2 for exit the Contact List App");
+            choiceCLA = scanner.nextInt();
+            switch (choiceCLA) {
+                case 1: {
+                    System.out.println();
+                    System.out.println("You are being directed to the Contact List App");
+                    call.enteringContactListApp();
+                    break;
+                }
+                case 2: {
+                    System.out.println();
+                    System.out.println("You are being directed to the exit of the Conact List App");
+                    call.exitingContactListApp();
+                    break;
+                }
+                default: {
+                    System.out.println();
+                    System.out.println("You have again entered an unexpected choice");
+                    unexpectedChoiceContactListApp();
+                }
+            }
+        } catch (IllegalStateException e) {
+            System.out.println();
+            System.out.println("As you have again and again entering the unexpected value.");
+            System.out.println("You are being directed to the exit of the Contact List App");
+            call.exitingContactListApp();
+        } catch (Exception e) {
+            System.out.println();
+            System.out.println("As you have again and again entering the unexpected value.");
+            System.out.println("You are being directed to the exit of the Contact List App");
+            call.exitingContactListApp();
+        }
     }
 
 
