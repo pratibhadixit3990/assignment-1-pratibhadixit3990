@@ -17,6 +17,40 @@ public class Person {
     String eMAddress = "";
 
     public void contactListApp() {
+        try {
+            Person call = new Person();
+            System.out.println("Do you want to enter the Contact List App");
+            System.out.println("Press 1 to enter and 2 to exit it");
+            int choiceContactListApp = scanner.nextInt();
+
+            switch (choiceContactListApp) {
+                case 1: {
+                    call.enteringContactListApp();
+                    break;
+                }
+                case 2: {
+                    call.exitingContactListApp();
+                    break;
+                }
+                default: {
+                    call.unexpectedChoiceContactListApp();
+                }
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid Input");
+            System.out.println("The Contact List App has encounterd a problem");
+            System.out.println("We are sorry for the interrupt");
+            System.out.println("Please, wait while the App is being closed!!!");
+            System.out.println();
+            System.out.println("Thanks for using the Contact List App");
+        } catch (Exception e) {
+            System.out.println("Exception has occurred");
+            System.out.println("The Contact List App has encounterd a problem");
+            System.out.println("We are sorry for the interrupt");
+            System.out.println("Please, wait while the App is being closed!!!");
+            System.out.println();
+            System.out.println("Thanks for using the Contact List App");
+        }
 
     }
 
