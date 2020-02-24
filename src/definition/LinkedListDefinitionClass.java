@@ -41,6 +41,9 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     }
 
+    public void traverseIData() {
+    }
+
     @Override
     public void search(String searchingContact) {
 
