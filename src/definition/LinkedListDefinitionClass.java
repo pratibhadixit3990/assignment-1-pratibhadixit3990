@@ -10,6 +10,7 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
     private int size = 0;
 
     public LinkedListDefinitionClass() {
+        first = null;
     }
 
     @Override
