@@ -105,6 +105,7 @@ public class Person {
     }
 
     private void contactView() {
+
     }
 
     private void contactAddition() {
