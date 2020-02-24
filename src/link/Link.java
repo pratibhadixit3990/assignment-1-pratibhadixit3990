@@ -6,4 +6,6 @@ public class Link {
 
     public String fName, lName;
 
+    public String[] cNumberArray = new String[100];
+
 }
