@@ -111,7 +111,122 @@ public class Person {
     }
 
     private void contactAddition() {
+        String cNumber;
+        char choiceCNumber = 'y', choiceFName, choiceLName, choiceEMAdddress;
+        int i = 0;
+        System.out.println("You have chosen to add a new contact: ");
+        System.out.println("Please enter the name of the Person");
 
+
+        System.out.print("First Name: ");
+        fName = scanner.next();
+        if (isStringOnlyAlphabet(fName)) {
+        } else {
+            System.out.println("Sorry, but your first name should contain alphabets only");
+            System.out.println("Do you again want to enter the first name?");
+            System.out.print("If yes than press 'y' otherwise press any other key on keyboard to exit Add module: ");
+            choiceFName = scanner.next().charAt(0);
+            if (choiceFName == 'y') {
+                System.out.print("First Name: ");
+                fName = scanner.next();
+            } else {
+                System.exit(0);
+            }
+
+        }
+
+        System.out.print("Last Name: ");
+        lName = scanner.next();
+        if (isStringOnlyAlphabet(lName)) {
+        } else {
+            System.out.println("Sorry, but your last name should contain alphabets only");
+            System.out.println("Do you again want to enter the last name?");
+            System.out.print("If yes than press 'y' otherwise press any other key on keyboard to exit Add module: ");
+            choiceLName = scanner.next().charAt(0);
+            if (choiceLName == 'y') {
+                System.out.print("Last Name: ");
+                lName = scanner.next();
+            } else {
+                System.exit(0);
+            }
+
+        }
+
+        System.out.print("Contact Number: ");
+        cNumber = scanner.next();
+        if (validatePhoneNumber(cNumber)) {
+            int sameContactNumber = 0;
+            for (int k = 0; k <= i; k++) {
+                if (cNumber.equals(cNumberArray[k])) {
+                    sameContactNumber++;
+                }
+            }
+            if (sameContactNumber == 0) {
+                cNumberArray[i] = cNumber;
+                i++;
+                System.out.println("Contact Number Added");
+            } else {
+                System.out.println("You have inputted same contact number.");
+                System.out.println("Please enter a different contact number");
+            }
+        } else {
+            System.out.println("You have inputted invalid phone number");
+        }
+        while (choiceCNumber == 'y') {
+            System.out.print("Would you like to add another contact number? (y/n): ");
+            choiceCNumber = scanner.next().charAt(0);
+            if (choiceCNumber == 'y') {
+                System.out.print("Contact Number: ");
+                cNumber = scanner.next();
+                if (validatePhoneNumber(cNumber)) {
+                    int sameContactNumber = 0;
+                    for (int k = 0; k <= i; k++) {
+                        if (cNumber.equals(cNumberArray[k])) {
+                            sameContactNumber++;
+                        }
+                    }
+                    if (sameContactNumber == 0) {
+                        cNumberArray[i] = cNumber;
+                        i++;
+                        System.out.println("Contact Number Added");
+                    } else {
+                        System.out.println("You have inputted same contact number.");
+                        System.out.println("Please enter a different contact number");
+                    }
+                } else {
+                    System.out.println("You have inputted invalid phone number");
+                }
+            } else if (choiceCNumber == 'n') {
+                break;
+            }
+        }
+
+        System.out.print("Would you like to add email address? (y/n): ");
+        choiceEMAdddress = scanner.next().charAt(0);
+        if (choiceEMAdddress == 'y') {
+            System.out.print("Email Address: ");
+            eMAddress = scanner.next();
+            if (isValid(eMAddress)) {
+            } else {
+                while (choiceEMAdddress == 'y') {
+                    System.out.println("You have inputted an invalid Email Address");
+                    System.out.print("Do you again want to enter the email address? (y/n): ");
+                    choiceEMAdddress = scanner.next().charAt(0);
+                    if (choiceEMAdddress == 'y') {
+                        System.out.print("Email Address: ");
+                        eMAddress = scanner.next();
+                        if (isValid(eMAddress)) {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        list.add(fName, lName, cNumberArray, eMAddress);
+        System.out.println("A new Contact Added");
+        enteringContactListApp();
     }
 
     private static boolean validatePhoneNumber(String phoneNo) {
