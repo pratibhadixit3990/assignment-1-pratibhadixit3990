@@ -99,7 +99,11 @@ public class Person {
     }
 
     private void contactDeletion() {
-
+        list.remove();
+        System.out.print("Press the number against the contact to delete it: ");
+        int contactIndexForDeletion = scanner.nextInt();
+        list.delete(contactIndexForDeletion);
+        enteringContactListApp();
     }
 
     private void contactSearching() {
