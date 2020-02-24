@@ -33,7 +33,44 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     @Override
     public void sort() {
+        if (size > 1) {
+            boolean nodesChanged;
 
+            do {
+                Link current = first;
+                Link previous = null;
+                Link nextNode = first.next;
+                nodesChanged = false;
+
+                while (nextNode != null) {
+                    if (current.fName.compareTo(nextNode.fName) > 0) {
+                        nodesChanged = true;
+
+                        if (previous != null) {
+                            Link temp = nextNode.next;
+
+                            previous.next = nextNode;
+                            nextNode.next = current;
+                            current.next = temp;
+                        } else {
+                            Link temp = nextNode.next;
+
+                            first = nextNode;
+                            nextNode.next = current;
+                            current.next = temp;
+                        }
+
+                        previous = nextNode;
+                        nextNode = current.next;
+                    } else {
+                        previous = current;
+                        current = nextNode;
+                        nextNode = nextNode.next;
+                    }
+                }
+            }
+            while (nodesChanged);
+        }
     }
 
     @Override
