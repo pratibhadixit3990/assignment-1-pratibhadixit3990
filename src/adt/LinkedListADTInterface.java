@@ -9,4 +9,6 @@ public interface LinkedListADTInterface {
     void search(String searchingContact);
 
     void sort();
+
+    void print();
 }
