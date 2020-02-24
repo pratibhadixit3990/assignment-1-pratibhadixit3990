@@ -103,7 +103,10 @@ public class Person {
     }
 
     private void contactSearching() {
-
+        System.out.println("You could search for a contact fron their first names: ");
+        String searchingContact = scanner.next();
+        list.search(searchingContact);
+        enteringContactListApp();
     }
 
     private void contactView() {
