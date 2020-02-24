@@ -7,6 +7,8 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     private Link first;
 
+    private int size = 0;
+
     @Override
     public void add(String fName, String lName, String[] cNumberArray, String eMAddress) {
     }
