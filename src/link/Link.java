@@ -10,4 +10,6 @@ public class Link {
 
     public String eMAddress;
 
+    public Link next;
+
 }
