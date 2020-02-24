@@ -16,6 +16,9 @@ public class Person {
 
     String eMAddress = "";
 
+    private void exitingContactListApp() {
+    }
+
     private void enteringContactListApp() {
         try {
             Person call = new Person();
