@@ -9,4 +9,6 @@ public class Person {
 
     LinkedListDefinitionClass list = new LinkedListDefinitionClass();
 
+    String fName, lName;
+
 }
