@@ -38,7 +38,14 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     @Override
     public void remove() {
-
+        sort();
+        System.out.println("Here are all your contacts: ");
+        Link current = first;
+        traverseIData();
+        while (current != null) {
+            current.displayLinkDeletion();
+            current = current.next;
+        }
     }
 
     public void traverseIData() {
