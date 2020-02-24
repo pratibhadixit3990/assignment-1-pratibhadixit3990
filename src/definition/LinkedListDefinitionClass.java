@@ -42,6 +42,18 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
     }
 
     public void traverseIData() {
+        sort();
+        Link temp = first;
+        int i = 1;
+
+        while (true) {
+            if (temp == null) {
+                break;
+            }
+            temp.iData = i;
+            temp = temp.next;
+            i++;
+        }
     }
 
     @Override
