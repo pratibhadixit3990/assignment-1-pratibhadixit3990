@@ -102,6 +102,7 @@ public class Person {
     }
 
     private void contactSearching() {
+
     }
 
     private void contactView() {
