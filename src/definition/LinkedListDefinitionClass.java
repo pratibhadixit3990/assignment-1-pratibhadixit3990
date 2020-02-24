@@ -167,6 +167,15 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     @Override
     public void print() {
-
+        sort();
+        System.out.println("---Here are all your contacts---");
+        System.out.println("-------- * -------- * -------- * --------");
+        Link current = first;
+        while (current != null) {
+            current.displayLink();
+            current = current.next;
+            System.out.println("-------- * -------- * -------- * --------");
+            System.out.println("-------- * -------- * -------- * --------");
+        }
     }
 }
