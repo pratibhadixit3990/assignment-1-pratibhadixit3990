@@ -99,6 +99,7 @@ public class Person {
     }
 
     private void contactDeletion() {
+
     }
 
     private void contactSearching() {
