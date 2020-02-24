@@ -1,4 +1,6 @@
 package main;
 
-public class Main {
+import person.Person;
+
+public class Main extends Person {
 }
