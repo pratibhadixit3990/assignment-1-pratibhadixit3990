@@ -7,4 +7,6 @@ public interface LinkedListADTInterface {
     void remove();
 
     void search(String searchingContact);
+
+    void sort();
 }
