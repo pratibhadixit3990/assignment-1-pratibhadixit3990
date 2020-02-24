@@ -16,6 +16,10 @@ public class Person {
 
     String eMAddress = "";
 
+    public void contactListApp() {
+
+    }
+
     private void unexpectedChoiceContactListApp() {
         Person call = new Person();
         System.out.println();
