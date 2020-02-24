@@ -2,6 +2,7 @@ package person;
 
 import definition.LinkedListDefinitionClass;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Person {
@@ -16,6 +17,97 @@ public class Person {
     String eMAddress = "";
 
     private void enteringContactListApp() {
+        try {
+            Person call = new Person();
+            System.out.println();
+            System.out.println("Welcome to Contact List App");
+            System.out.println("Press 1 to add a new contact");
+            System.out.println("Press 2 to view all contacts");
+            System.out.println("Press 3 to search for a contact");
+            System.out.println("Press 4 to delete a contact");
+            System.out.println("Press 5 to exit program");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1: {
+                    System.out.println();
+                    System.out.println("Add a contact");
+                    contactAddition();
+                    break;
+                }
+                case 2: {
+                    System.out.println();
+                    System.out.println("View all contacts");
+                    contactView();
+                    break;
+                }
+                case 3: {
+                    System.out.println();
+                    System.out.println("Search for a contact");
+                    contactSearching();
+                    break;
+                }
+                case 4: {
+                    System.out.println();
+                    System.out.println("Delete from contact");
+                    contactDeletion();
+                    break;
+                }
+                case 5: {
+                    System.out.println();
+                    System.out.println("Thanks for using the Contact List App. ");
+                    System.exit(0);
+                    break;
+                }
+                default: {
+                    System.out.println();
+                    System.out.println("You have entered the unexpected value.");
+                    System.out.println("Do you again want to enter the Contact List App");
+                    System.out.println("If yes press 1 otherwise press any other digit and you will get exit from this app");
+                    int choiceAgain = scanner.nextInt();
+                    if (choiceAgain == 1) {
+                        call.enteringContactListApp();
+                    } else {
+                        System.out.println();
+                        System.out.println("Thanks for using the Contact List App. Visit again!!");
+                        System.exit(0);
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Null Pointer Exception has occurred");
+            System.out.println("The Contact List App has encounterd a problem");
+            System.out.println("We are sorry for the interrupt");
+            System.out.println("Please, wait while the App is being closed!!!");
+            System.out.println();
+            System.out.println("Thanks for using the Contact List App");
+        } catch (InputMismatchException e) {
+            System.out.println("Input Mismatch Exception has occurred");
+            System.out.println("The Contact List App has encounterd a problem");
+            System.out.println("We are sorry for the interrupt");
+            System.out.println("Please, wait while the App is being closed!!!");
+            System.out.println();
+            System.out.println("Thanks for using the Contact List App");
+        } catch (Exception e) {
+            System.out.println("Exception has occurred");
+            System.out.println("The Contact List App has encounterd a problem");
+            System.out.println("We are sorry for the interrupt");
+            System.out.println("Please, wait while the App is being closed!!!");
+            System.out.println();
+            System.out.println("Thanks for using the Contact List App");
+        }
+
+    }
+
+    private void contactDeletion() {
+    }
+
+    private void contactSearching() {
+    }
+
+    private void contactView() {
+    }
+
+    private void contactAddition() {
     }
 
     private static boolean validatePhoneNumber(String phoneNo) {
