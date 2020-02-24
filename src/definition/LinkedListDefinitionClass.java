@@ -68,6 +68,60 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
 
     }
 
+    public Link findNode(String searchingContact) {
+        Link current = first;
+        int contactFound = 0;
+        int traversingID = 0;
+        if (first == null) {
+            return null;
+        }
+
+        boolean found = false;
+        current = first;
+        while (current != null) {
+            if (current.fName.compareTo(searchingContact) == 0) {
+                found = true;
+                contactFound++;
+            }
+            current = current.next;
+        }
+        System.out.println(contactFound + " match found!");
+        System.out.println("-------- * -------- * -------- * --------");
+        Link temp = first;
+        while (true) {
+            if (temp == null) {
+                break;
+            } else if (temp.fName.equals(searchingContact)) {
+                System.out.println("First Name: " + temp.fName);
+                System.out.println("Last Name: " + temp.lName);
+                int counterCNumberArray = 0;
+                while (temp.cNumberArray[counterCNumberArray] != null) {
+                    counterCNumberArray++;
+                }
+                String[] newCNumberArray = new String[counterCNumberArray];
+                for (int i = 0; i < newCNumberArray.length; i++) {
+                    newCNumberArray[i] = temp.cNumberArray[i];
+                }
+                if (counterCNumberArray == 1) {
+                    System.out.println("Contact Number: " + newCNumberArray[0]);
+                } else {
+                    String models = String.join(", ", newCNumberArray);
+                    System.out.println("Contact Number(s): " + models);
+                }
+                if (temp.eMAddress.equals("")) {
+                    System.out.println("Email address: Not Entered");
+                    System.out.println("-------- * -------- * -------- * --------");
+                } else {
+                    System.out.println("Email address:" + temp.eMAddress);
+                    System.out.println("-------- * -------- * -------- * --------");
+                }
+            }
+            temp = temp.next;
+        }
+
+        return current;
+    }
+
     @Override
     public void sort() {
         if (size > 1) {
