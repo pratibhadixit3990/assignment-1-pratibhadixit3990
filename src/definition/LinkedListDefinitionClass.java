@@ -13,6 +13,10 @@ public class LinkedListDefinitionClass implements LinkedListADTInterface {
         first = null;
     }
 
+    public boolean isEmpty() {
+        return (first == null);
+    }
+
     @Override
     public void add(String fName, String lName, String[] cNumberArray, String eMAddress) {
     }
